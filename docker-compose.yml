@@ -1,0 +1,16 @@
+version: "2"
+services:
+
+  linkerdtcp:
+    build:
+      context: ./
+      dockerfile: containers/linkerdtcp/Dockerfile
+    image: servicediscovery/linkerdtcp
+    depends_on:
+      - namerd
+
+  namerd:
+    build:
+      context: ./
+      dockerfile: containers/namerd/Dockerfile
+    image: servicediscovery/namerd

@@ -1,0 +1,9 @@
+proxies:
+  - label: default
+    servers:
+      - kind: io.l5d.tcp
+        addr: 0.0.0.0:7474
+
+    namerd:
+      url: http://namerd:4180
+      path: /svc/db1
