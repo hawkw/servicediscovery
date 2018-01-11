@@ -14,3 +14,11 @@ services:
       context: ./
       dockerfile: containers/namerd/Dockerfile
     image: servicediscovery/namerd
+
+  tests:
+    build:
+      context: ./
+      dockerfile: containers/tests/Dockerfile
+    image: servicediscovery/tests
+    depends_on:
+      - linkerdtcp
