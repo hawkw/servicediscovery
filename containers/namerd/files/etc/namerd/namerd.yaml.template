@@ -1,5 +1,14 @@
+namers:
+- kind: io.l5d.fs
+  rootDir: /etc/namerd/disco
+
 storage:
   kind: io.l5d.inMemory
+  namespaces:
+    default: |
+      /cluster   => /#/io.l5d.fs;
+      /svc/db7400 => /cluster/mongo;
+
 interfaces:
 - kind: io.l5d.httpController
   ip: 0.0.0.0

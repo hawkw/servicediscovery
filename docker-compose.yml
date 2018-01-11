@@ -7,6 +7,7 @@ services:
       dockerfile: containers/linkerdtcp/Dockerfile
     image: servicediscovery/linkerdtcp
     depends_on:
+      - mongodb
       - namerd
 
   namerd:
@@ -22,3 +23,6 @@ services:
     image: servicediscovery/tests
     depends_on:
       - linkerdtcp
+
+  mongodb:
+    image: mongo:3.4.4
