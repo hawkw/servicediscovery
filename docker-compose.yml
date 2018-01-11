@@ -23,6 +23,7 @@ services:
     image: servicediscovery/tests
     depends_on:
       - linkerdtcp
+      - mongodb
 
   mongodb:
     image: mongo:3.4.4
