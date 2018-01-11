@@ -1,5 +1,5 @@
 proxies:
-  - label: default
+  - label: db7400
     servers:
       - kind: io.l5d.tcp
         addr: 0.0.0.0:7400
@@ -7,4 +7,14 @@ proxies:
     namerd:
       url: http://namerd:4180
       path: /svc/db7400
+      intervalSecs: 5
+
+  - label: db7401
+    servers:
+      - kind: io.l5d.tcp
+        addr: 0.0.0.0:7401
+
+    namerd:
+      url: http://namerd:4180
+      path: /svc/db7401
       intervalSecs: 5

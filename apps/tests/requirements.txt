@@ -2,3 +2,4 @@ pika
 pymongo
 pytest
 requests
+timeout-decorator

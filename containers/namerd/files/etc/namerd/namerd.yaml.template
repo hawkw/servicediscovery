@@ -8,6 +8,7 @@ storage:
     default: |
       /cluster   => /#/io.l5d.fs;
       /svc/db7400 => /cluster/mongo;
+      /svc/db7401 => /cluster/rabbitmq;
 
 interfaces:
 - kind: io.l5d.httpController

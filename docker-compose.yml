@@ -9,6 +9,7 @@ services:
     depends_on:
       - mongodb
       - namerd
+      - rabbitmqdb
 
   namerd:
     build:
@@ -24,6 +25,10 @@ services:
     depends_on:
       - linkerdtcp
       - mongodb
+      - rabbitmqdb
 
   mongodb:
     image: mongo:3.4.4
+
+  rabbitmqdb:
+    image: rabbitmq:3.6.12-alpine
