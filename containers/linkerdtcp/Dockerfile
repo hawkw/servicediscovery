@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM linkerd/linkerd-tcp:0.1.1
 
 # Install envsubst
 RUN apt-get update && apt-get install -y gettext

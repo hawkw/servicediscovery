@@ -6,10 +6,13 @@ services:
       context: ./
       dockerfile: containers/linkerdtcp/Dockerfile
     image: servicediscovery/linkerdtcp
+    environment:
+      - RUST_LOG=linkerd_tcp=debug
     depends_on:
       - mongodb
       - namerd
       - rabbitmqdb
+
 
   namerd:
     build:

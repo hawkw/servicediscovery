@@ -1,20 +1,15 @@
-proxies:
-  - label: db7400
+routers:
+  - label: default
     servers:
-      - kind: io.l5d.tcp
-        addr: 0.0.0.0:7400
+      - port: 7400
+        ip: 0.0.0.0
+        dstName: /svc/db7400
+      - port: 7401
+        ip: 0.0.0.0
+        dstName: /svc/db7401
 
-    namerd:
-      url: http://namerd:4180
-      path: /svc/db7400
-      intervalSecs: 5
-
-  - label: db7401
-    servers:
-      - kind: io.l5d.tcp
-        addr: 0.0.0.0:7401
-
-    namerd:
-      url: http://namerd:4180
-      path: /svc/db7401
-      intervalSecs: 5
+    interpreter:
+      kind: io.l5d.namerd.http
+      namespace: default
+      baseUrl: http://namerd:4180
+      periodSecs: 5
